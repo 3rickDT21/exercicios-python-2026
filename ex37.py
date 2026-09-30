@@ -9,16 +9,23 @@
 
 import math
 
-while(True):
+a=int(input("Digite o valor de a\n: "))
+b=int(input("Digite o valor de b\n: "))
+c=int(input("Digite o valor de c\n: "))
 
-    a=int(input("Digite o valor de a\n: "))
-	
-    b=int(input("Digite o valor de b\n"))
-
-    c=int(input("Digite o valor de c\n: "))
-
-    if (a == 0):
-        print("A equação não é de segundo grau!")
-    break
-
-
+if(a != 0):
+	delta = (b*b) - 4*a*c
+	print("Delta=", delta,"\n")
+	raiz_delta = math.sqrt(delta)
+	if(delta == 0):
+		x1 = ((-b + raiz_delta)/(2*a))
+		print("X1 e X2 é",x1,"\n")
+	elif (delta > 0):
+		x1 = ((-b + raiz_delta)/(2*a))
+		x2 = ((-b -raiz_delta) / (2*a))
+		print(f"X1= {x1} \nX2= {x2}")
+	elif (delta < 0):
+		print("Não existe raízes reais!")
+			
+else:
+	print("Não é equação do segundo grau!")
